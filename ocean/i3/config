@@ -1,0 +1,120 @@
+set $mod Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# [TODO] Tiled windows will not have titlebars, whereas floating windows will.
+new_window pixel 0
+
+# make all floating
+# for_window [class="[.]*"] floating enable
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+c exec i3-sensible-terminal
+
+# rofi
+bindsym $mod+r exec rofi -show run
+
+# start firefox
+bindsym $mod+w exec firefox
+
+# file mgr
+bindsym $mod+f exec pcmanfm
+
+# atom
+bindsym $mod+e exec atom
+
+# kill focused window
+bindsym $mod+x kill
+
+# change focus
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
+
+# split in horizontal orientation
+bindsym $mod+backslash split h
+
+# split in vertical orientation
+bindsym $mod+BackSpace split v
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+q restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+q exit
+
+# move windows
+bindsym $mod+Shift+Up move up 20px
+bindsym $mod+Shift+Down move down 20px
+bindsym $mod+Shift+Left move left 20px
+bindsym $mod+Shift+Right move right 20px
+
+# resize windows
+bindsym $mod+Down resize grow down 5px or 5ppt
+bindsym $mod+Up resize shrink down 5px or 5ppt
+bindsym $mod+Left resize shrink right 5px or 5ppt
+bindsym $mod+Right resize grow right 5px or 5ppt
+
+# fine move windows
+bindsym $mod+Control+Shift+Up move up 1px
+bindsym $mod+Control+Shift+Down move down 1px
+bindsym $mod+Control+Shift+Left move left 1px
+bindsym $mod+Control+Shift+Right move right 1px
+
+# fine resize windows
+bindsym $mod+Control+Down resize grow down 1px
+bindsym $mod+Control+Up resize shrink down 1px
+bindsym $mod+Control+Left resize shrink right 1px
+bindsym $mod+Control+Right resize grow right 1px
+
+# gaps
+bindsym $mod+bracketleft gaps inner current minus 10
+bindsym $mod+bracketright gaps inner current plus 10
+bindsym $mod+Shift+bracketleft gaps outer current minus 10
+bindsym $mod+Shift+bracketright gaps outer current plus 10
+
+# colors
+client.focused #5f6d64 #5f6d64 #5f6d64 #5f6d64
+client.focused_inactive #78877d #78877d #78877d #78877d
+client.unfocused #efecf4 #78877d #78877d #78877d #78877d
+client.urgent #9f713c #9f713c #9f713c #9f713c
+client.placeholder #5f6d64 #5f6d64 #5f6d64 #5f6d64
+
+client.background #efecf4

@@ -1,0 +1,29 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+conky.config = {
+    alignment = 'bottom_right',
+    background = false,
+    border_width = 0,
+	default_color = '#ffffff',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    draw_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'Tamsyn:size=14',
+    gap_x = 25,
+    gap_y = 25,
+    minimum_height = 5,
+	minimum_width = 5,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'conky',
+    own_window_type = 'override',
+	own_window_transparent = true,
+    update_interval = 1.0,
+	double_buffer = true
+}
+
+conky.text = [[
+	${execi 600 checkupdates | wc -l} updates available
+]]
